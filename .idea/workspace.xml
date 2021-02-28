@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80cf7e3-e4e9-4973-b08b-0acdf0f5a729" name="Default Changelist" comment="" />
+    <list default="true" id="b80cf7e3-e4e9-4973-b08b-0acdf0f5a729" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,21 +57,33 @@
       <workItem from="1611595499956" duration="1798000" />
       <workItem from="1612409389231" duration="596000" />
       <workItem from="1614101811621" duration="709000" />
-      <workItem from="1614493553576" duration="1697000" />
+      <workItem from="1614493553576" duration="2502000" />
     </task>
+    <task id="LOCAL-00001" summary="fhgvghbmnnh">
+      <created>1614496048480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614496048480</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fhgvghbmnnh" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhgvghbmnnh" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604984153679">
+    <state x="585" y="2" key="CommitChangelistDialog2" timestamp="1614496040108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604984153679" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1604986268617">
+    <state x="585" y="2" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614496040108" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1614496407450">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604986268617" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614496407450" />
   </component>
 </project>
