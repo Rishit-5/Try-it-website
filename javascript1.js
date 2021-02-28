@@ -12,6 +12,9 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var nameV,rollV,secV,genV;
+var files = [];
+var imgName, imgUrl;
+var reader;
 function Ready(){
     nameV = document.getElementById('namebox').value;
     rollV = document.getElementById('rollbox').value;
@@ -42,7 +45,29 @@ document.getElementById("select").onclick = function(){
 
     });
 }
+document.getElementById("simage").onclick = function(){
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.onchange = e => {
+        files = e.target.files;
+        reader = new FileReader();
+        reader.onload = function(){
+            document.getElementById("myimg").src = reader.result;
+        }
+        reader.readAsDataURL(files[0]);
+    }
+    input.click();
 
+
+}
+document.getElementById("retrieve").onclick = function(){
+    imgName = document.getElementById('namebox').value;
+    firebase.database().ref('Pictures/'+imgName).on('value', function(snapshot){
+        document.getElementById('myimg').src = snapshot.val().Link;
+    });
+
+
+}
 document.getElementById('update').onclick = function(){
     Ready();
     firebase.database().ref('student/'+rollV).update({
@@ -51,7 +76,30 @@ document.getElementById('update').onclick = function(){
         Gender: genV
     });
 }
+document.getElementById('up').onclick = function(){
+    imgName = document.getElementById("namebox").value;
+    var uploadTask = firebase.storage().ref('Image/'+imgName+".png").put(files[0]);
 
+    uploadTask.on('state_changed', function (snapshot){
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            document.getElementById('upProgress').innerHTML = 'Upload' + progress+'%';
+        },
+        function(error){
+            alert('error')
+        },
+        function(){
+            uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+                    imgUrl = url;
+
+                    firebase.database().ref('Pictures/'+imgName).set({
+                        Name: imgName,
+                        Link: imgUrl
+                    });
+                    alert('image added successfully');
+                }
+            );
+        });
+}
 document.getElementById('delete').onclick = function(){
     Ready();
     firebase.database().ref('student/'+rollV).remove();
