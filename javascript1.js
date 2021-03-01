@@ -65,35 +65,70 @@ document.getElementById("enterBtn").onclick = function () {
     nameV = document.getElementById("namebox").value;
     emailV = document.getElementById("emailbox").value;
     passWV = document.getElementById("passbox").value;
-    alert(firebase.database().ref("Users").hasChildNodes());
+
     if (!(nameV == "") && !(emailV == "") && !(passWV == "")) {
-        if (firebase.database().ref("Users/" + nameV).exists()) {
-            if (passWV == firebase.database().ref("Users/"+nameV).getChild("Password").getValue()) {
-                alert("Welcome Back!");
-                emailV = firebase.database().ref("Users/" + nameV).getChild("Email").getValue();
+        // if (firebase.database().ref("Users/" + nameV).exists()) {
+        //     if (passWV == firebase.database().ref("Users/"+nameV).getChild("Password").getValue()) {
+        //         alert("Welcome Back!");
+        //         emailV = firebase.database().ref("Users/" + nameV).getChild("Email").getValue();
+        //
+        //
+        //         document.getElementById("signinScreen").hidden = true;
+        //         document.getElementById("app").hidden = false;
+        //         hideMainDivs();
+        //         document.getElementById("homePage").hidden = true;
+        //     } else {
+        //         alert("Incorrect password");
+        //     }
+        // } else {
+        //     firebase.database().ref("Users/"+nameV).set({
+        //         Name:nameV,
+        //         Email: emailV,
+        //         Password: passWV,
+        //         Followers: 0,
+        //
+        //     });
+        //     document.getElementById("signinScreen").hidden = true;
+        //     document.getElementById("app").hidden = false;
+        //     hideMainDivs();
+        //     document.getElementById("homePage").hidden = true;
+        // }
+        //
 
+        firebase.database().ref("Users/"+nameV).on('value', function (snapshot) {
+            if (snapshot.exists()) {
+                var passpass;
+                firebase.database().ref("Users/"+nameV+"/Password").on('value', function(snapshot) {
+                    passpass = snapshot.val();
+                });
 
+                if (passWV ===passpass) {
+                    alert("Welcome!");
+                    firebase.database().ref("Users/"+nameV+"/Email").on('value', function(snapshot) {
+                        emailV = snapshot.val();
+                    });
+
+                    document.getElementById("signinScreen").hidden = true;
+                    document.getElementById("app").hidden = false;
+                    hideMainDivs();
+                    document.getElementById("homePage").hidden = true;
+                } else {
+                    alert("Incorrect password");
+                }
+            } else {
+                firebase.database().ref("Users/"+nameV).set({
+                    Name:nameV,
+                    Email: emailV,
+                    Password: passWV,
+                    Followers: 0,
+
+                });
                 document.getElementById("signinScreen").hidden = true;
                 document.getElementById("app").hidden = false;
                 hideMainDivs();
                 document.getElementById("homePage").hidden = true;
-            } else {
-                alert("Incorrect password");
             }
-        } else {
-            firebase.database().ref("Users/"+nameV).set({
-                Name:nameV,
-                Email: emailV,
-                Password: passWV,
-                Followers: 0,
-
-            });
-            document.getElementById("signinScreen").hidden = true;
-            document.getElementById("app").hidden = false;
-            hideMainDivs();
-            document.getElementById("homePage").hidden = true;
-        }
-
+        });
 
     } else {
         alert("Your password, email, or name field is empty");
