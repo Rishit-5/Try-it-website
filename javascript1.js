@@ -16,7 +16,7 @@ var files = [];
 var imgName, imgUrl;
 var reader;
 function Ready(){
-    nameV = document.getElementById('namebox').value;
+    nameV = document.getElementById('namebox1').value;
     rollV = document.getElementById('rollbox').value;
     secV = document.getElementById('secbox').value;
     genV = document.getElementById('genbox').value;
@@ -36,7 +36,7 @@ document.getElementById('insert').onclick = function(){
 document.getElementById("select").onclick = function(){
     Ready();
     firebase.database().ref('student/' + rollV).on('value',function(snapshot){
-        document.getElementById("namebox").value = snapshot.val().nameOfStudent;
+        document.getElementById("namebox1").value = snapshot.val().nameOfStudent;
         document.getElementById('secbox').value = snapshot.val().Section;
         document.getElementById('genbox').value = snapshot.val().Gender;
 
@@ -61,23 +61,16 @@ document.getElementById("simage").onclick = function(){
 
 }
 document.getElementById("retrieve").onclick = function(){
-    imgName = document.getElementById('namebox').value;
+    imgName = document.getElementById('namebox1').value;
     firebase.database().ref('Pictures/'+imgName).on('value', function(snapshot){
         document.getElementById('myimg').src = snapshot.val().Link;
     });
 
 
 }
-document.getElementById('update').onclick = function(){
-    Ready();
-    firebase.database().ref('student/'+rollV).update({
-        nameOfStudent: nameV,
-        Section: secV,
-        Gender: genV
-    });
-}
+
 document.getElementById('up').onclick = function(){
-    imgName = document.getElementById("namebox").value;
+    imgName = document.getElementById("namebox1").value;
     var uploadTask = firebase.storage().ref('Image/'+imgName+".png").put(files[0]);
 
     uploadTask.on('state_changed', function (snapshot){
@@ -103,4 +96,12 @@ document.getElementById('up').onclick = function(){
 document.getElementById('delete').onclick = function(){
     Ready();
     firebase.database().ref('student/'+rollV).remove();
+}
+document.getElementById('update').onclick = function(){
+    Ready();
+    firebase.database().ref('student/'+rollV).update({
+        nameOfStudent: nameV,
+        Section: secV,
+        Gender: genV
+    });
 }
