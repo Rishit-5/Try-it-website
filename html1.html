@@ -6,23 +6,73 @@
 </head>
 
 <body>
-<img id = "myimg"> <label id = "upProgress"></label> <br> <br>
-Name <input id="namebox1" type="text"/></input> <br><br>
-Roll No <input id="rollbox" type="text"/></input> <br><br>
-Section <input id="secbox" type="text"/></input> <br><br>
-Gender <input id="genbox" type="text"/></input><br><br>
 
-<button id="insert">INSERT</button>
-<button id="select">SELECT</button>
-<button id="update">UPDATE</button>
-<button id="delete">DELETE</button>
-<br>
-<button id="simage">Select Image</button>
-<button id="up">Upload</button>
-<button id="retrieve">Retrieve</button>
+<div id = "signinScreen" >
+
+<button id="siginGoogle">SIGN IN WITH GOOGLE</button><br><br>
+Name <input id="namebox" type="text" class="signInTBoxes"/></input> <br><br>
+Email<input id="emailbox" type="text" class="signInTBoxes"/></input> <br><br>
+Password <input id="passbox" type="text" class="signInTBoxes"/></input> <br><br>
+<button id="enterBtn" >ENTER</button>
+
+</div>
+
+<div id = "app" hidden = hidden>
+    <div id = "appnavBar">
+        <button id="homeBtn">HOME</button>
+        <button id="searchBtn">SEARCH </button>
+        <button id="myprofileBtn">PROFILE</button>
+    </div>
+
+    <div id="searchPage">
+        <p>SEARCH PAGE</p>
+    </div>
+
+    <div id = "homePage">
+        <p>THIS IS THE HOME PAGE</p>
+    </div>
+
+    <div id = "myprofilePage">
+
+        <div id = "myprofile">
+            <p>THIS IS THE PROFILE PAGE</p>
+            <button id="postBtn">POST</button>
+        </div>
 
 
+        <div id = "postingPage" hidden = hidden >
+            <!--        Three buttons for picking the type of post-->
+            <div id = "postNavBar">
+<!--                <button id="quoteBtn">QUOTE</button>-->
+<!--                <button id="recipeBtn">RECIPE</button>-->
+<!--                <button id="workoutBtn">WORKOUT</button>-->
+<!--                <button id="postBackBtn">BACK</button>-->
+                <img id = "myimg"> <label id = "upProgress"></label> <br> <br>
+                Name <input id="namebox1" type="text"/></input> <br><br>
 
+                <button id="insert">INSERT</button>
+                <br>
+                <button id="simage">Select Image</button>
+                <button id="up">Upload</button>
+                <button id="retrieve">Retrieve</button>
+            </div>
+
+            <div id = "quote" hidden = "hidden">
+                <p>THIS THE QUOTE PAGE</p>
+            </div>
+
+            <div id = "recipe" hidden = "hidden">
+                <p>THIS THE RECIPE PAGE</p>
+            </div>
+
+            <div id = "workout" hidden = "hidden">
+                <p>THIS THE WORKOUT PAGE</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>

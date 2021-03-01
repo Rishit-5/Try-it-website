@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80cf7e3-e4e9-4973-b08b-0acdf0f5a729" name="Default Changelist" comment="" />
+    <list default="true" id="b80cf7e3-e4e9-4973-b08b-0acdf0f5a729" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/FirebaseTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FirebaseTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css1.css" beforeDir="false" afterPath="$PROJECT_DIR$/css1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript1.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript1.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,9 +63,14 @@
       <workItem from="1611595499956" duration="1798000" />
       <workItem from="1612409389231" duration="596000" />
       <workItem from="1614101811621" duration="709000" />
+<<<<<<< HEAD
+      <workItem from="1614493553576" duration="2502000" />
+      <workItem from="1614540345169" duration="8650000" />
+=======
       <workItem from="1614493553576" duration="8697000" />
       <workItem from="1614542016427" duration="166000" />
-      <workItem from="1614542278018" duration="5150000" />
+      <workItem from="1614542278018" duration="792000" />
+>>>>>>> origin/master
     </task>
     <task id="LOCAL-00001" summary="fhgvghbmnnh">
       <created>1614496048480</created>
@@ -74,21 +86,7 @@
       <option name="project" value="LOCAL" />
       <updated>1614496432543</updated>
     </task>
-    <task id="LOCAL-00003" summary="upload images">
-      <created>1614543084925</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1614543084925</updated>
-    </task>
-    <task id="LOCAL-00004" summary="useless">
-      <created>1614569246144</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1614569246144</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,8 +94,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fhgvghbmnnh" />
-    <MESSAGE value="upload images" />
-    <MESSAGE value="useless" />
-    <option name="LAST_COMMIT_MESSAGE" value="useless" />
+    <option name="LAST_COMMIT_MESSAGE" value="fhgvghbmnnh" />
   </component>
 </project>
