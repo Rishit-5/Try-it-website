@@ -65,7 +65,7 @@ document.getElementById("enterBtn").onclick = function () {
     nameV = document.getElementById("namebox").value;
     emailV = document.getElementById("emailbox").value;
     passWV = document.getElementById("passbox").value;
-    alert(firebase.database().ref("Users").exists());
+    alert(firebase.database().ref("Users").hasChildNodes());
     if (!(nameV == "") && !(emailV == "") && !(passWV == "")) {
         if (firebase.database().ref("Users/" + nameV).exists()) {
             if (passWV == firebase.database().ref("Users/"+nameV).getChild("Password").getValue()) {
