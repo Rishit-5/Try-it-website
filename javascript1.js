@@ -56,7 +56,10 @@ firebase.initializeApp(firebaseConfig);
 //     Ready();
 //     firebase.database().ref('student/'+rollV).remove();
 // }
-
+var nameV,rollV,secV,genV;
+var files = [];
+var imgName, imgUrl;
+var reader;
 
 document.getElementById("enterBtn").onclick = function () {
     document.getElementById("signinScreen").hidden = true;
@@ -78,6 +81,8 @@ document.getElementById("searchBtn").onclick = function () {
 document.getElementById("myprofileBtn").onclick = function () {
     hideMainDivs();
     document.getElementById("myprofilePage").hidden = false;
+    document.getElementById("myprofile").hidden = false;
+    document.getElementById("postingPage").hidden = true;
 }
 
 document.getElementById("postBtn").onclick = function () {
@@ -85,25 +90,25 @@ document.getElementById("postBtn").onclick = function () {
     document.getElementById("postingPage").hidden = false;
 }
 
-document.getElementById("quoteBtn").onclick = function () {
-    hidePostOps();
-    document.getElementById("quote").hidden = false;
-}
-
-document.getElementById("recipeBtn").onclick = function () {
-    hidePostOps();
-    document.getElementById("recipe").hidden = false;
-}
-
-document.getElementById("workoutBtn").onclick = function () {
-    hidePostOps();
-    document.getElementById("workout").hidden = false;
-}
-
-document.getElementById("postBackBtn").onclick = function () {
-    document.getElementById("myprofile").hidden = false;
-    document.getElementById("postingPage").hidden = true;
-}
+// document.getElementById("quoteBtn").onclick = function () {
+//     hidePostOps();
+//     document.getElementById("quote").hidden = false;
+// }
+//
+// document.getElementById("recipeBtn").onclick = function () {
+//     hidePostOps();
+//     document.getElementById("recipe").hidden = false;
+// }
+//
+// document.getElementById("workoutBtn").onclick = function () {
+//     hidePostOps();
+//     document.getElementById("workout").hidden = false;
+// }
+//
+// document.getElementById("postBackBtn").onclick = function () {
+//     document.getElementById("myprofile").hidden = false;
+//     document.getElementById("postingPage").hidden = true;
+// }
 
 function hidePostOps() {
     document.getElementById("quote").hidden = true;
@@ -111,8 +116,59 @@ function hidePostOps() {
     document.getElementById("workout").hidden = true;
 }
 
+
 function hideMainDivs() {
     document.getElementById("searchPage").hidden = true;
     document.getElementById("homePage").hidden = true;
     document.getElementById("myprofilePage").hidden = true;
+}
+
+
+document.getElementById("simage").onclick = function(){
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.onchange = e => {
+        files = e.target.files;
+        reader = new FileReader();
+        reader.onload = function(){
+            document.getElementById("myimg").src = reader.result;
+        }
+        reader.readAsDataURL(files[0]);
+    }
+    input.click();
+
+
+}
+document.getElementById("retrieve").onclick = function(){
+    imgName = document.getElementById('namebox1').value;
+    firebase.database().ref('Pictures/'+imgName).on('value', function(snapshot){
+        document.getElementById('myimg').src = snapshot.val().Link;
+    });
+
+
+}
+
+document.getElementById('up').onclick = function(){
+    imgName = document.getElementById("namebox1").value;
+    var uploadTask = firebase.storage().ref('Image/'+imgName+".png").put(files[0]);
+
+    uploadTask.on('state_changed', function (snapshot){
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            document.getElementById('upProgress').innerHTML = 'Upload' + progress+'%';
+        },
+        function(error){
+            alert('error')
+        },
+        function(){
+            uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+                    imgUrl = url;
+
+                    firebase.database().ref('Pictures/'+imgName).set({
+                        Name: imgName,
+                        Link: imgUrl
+                    });
+                    alert('image added successfully');
+                }
+            );
+        });
 }

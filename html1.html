@@ -11,8 +11,8 @@
 
 <button id="siginGoogle">SIGN IN WITH GOOGLE</button><br><br>
 Name <input id="namebox" type="text" class="signInTBoxes"/></input> <br><br>
-Email<input id="rollbox" type="text" class="signInTBoxes"/></input> <br><br>
-Password <input id="secbox" type="text" class="signInTBoxes"/></input> <br><br>
+Email<input id="emailbox" type="text" class="signInTBoxes"/></input> <br><br>
+Password <input id="passbox" type="text" class="signInTBoxes"/></input> <br><br>
 <button id="enterBtn" >ENTER</button>
 
 </div>
@@ -25,17 +25,17 @@ Password <input id="secbox" type="text" class="signInTBoxes"/></input> <br><br>
     </div>
 
     <div id="searchPage">
-        <p>SEARCH PAGE CUH</p>
+        <p>SEARCH PAGE</p>
     </div>
 
     <div id = "homePage">
-        <p>THIS IS THE HOME PAGE NIBBBAAAA</p>
+        <p>THIS IS THE HOME PAGE</p>
     </div>
 
     <div id = "myprofilePage">
 
         <div id = "myprofile">
-            <p>THIS BE THE PROFILE PAGE</p>
+            <p>THIS IS THE PROFILE PAGE</p>
             <button id="postBtn">POST</button>
         </div>
 
@@ -43,22 +43,30 @@ Password <input id="secbox" type="text" class="signInTBoxes"/></input> <br><br>
         <div id = "postingPage" hidden = hidden >
             <!--        Three buttons for picking the type of post-->
             <div id = "postNavBar">
-                <button id="quoteBtn">QUOTE</button>
-                <button id="recipeBtn">RECIPE</button>
-                <button id="workoutBtn">WORKOUT</button>
-                <button id="postBackBtn">BACK</button>
+<!--                <button id="quoteBtn">QUOTE</button>-->
+<!--                <button id="recipeBtn">RECIPE</button>-->
+<!--                <button id="workoutBtn">WORKOUT</button>-->
+<!--                <button id="postBackBtn">BACK</button>-->
+                <img id = "myimg"> <label id = "upProgress"></label> <br> <br>
+                Name <input id="namebox1" type="text"/></input> <br><br>
+
+                <button id="insert">INSERT</button>
+                <br>
+                <button id="simage">Select Image</button>
+                <button id="up">Upload</button>
+                <button id="retrieve">Retrieve</button>
             </div>
 
             <div id = "quote" hidden = "hidden">
-                <p>THIS THE QUOTE PAGE BITCH</p>
+                <p>THIS THE QUOTE PAGE</p>
             </div>
 
             <div id = "recipe" hidden = "hidden">
-                <p>THIS THE RECIPE PAGE BITCH</p>
+                <p>THIS THE RECIPE PAGE</p>
             </div>
 
             <div id = "workout" hidden = "hidden">
-                <p>THIS THE WORKOUT PAGE BITCH</p>
+                <p>THIS THE WORKOUT PAGE</p>
             </div>
         </div>
 
@@ -66,10 +74,11 @@ Password <input id="secbox" type="text" class="signInTBoxes"/></input> <br><br>
 
 </div>
 
-
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+
 <script src="javascript1.js">
 </script>
 

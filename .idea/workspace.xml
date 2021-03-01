@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b80cf7e3-e4e9-4973-b08b-0acdf0f5a729" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/FirebaseTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FirebaseTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css1.css" beforeDir="false" afterPath="$PROJECT_DIR$/css1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html1.html" afterDir="false" />
@@ -42,6 +44,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -60,8 +63,14 @@
       <workItem from="1611595499956" duration="1798000" />
       <workItem from="1612409389231" duration="596000" />
       <workItem from="1614101811621" duration="709000" />
+<<<<<<< HEAD
       <workItem from="1614493553576" duration="2502000" />
       <workItem from="1614540345169" duration="8650000" />
+=======
+      <workItem from="1614493553576" duration="8697000" />
+      <workItem from="1614542016427" duration="166000" />
+      <workItem from="1614542278018" duration="792000" />
+>>>>>>> origin/master
     </task>
     <task id="LOCAL-00001" summary="fhgvghbmnnh">
       <created>1614496048480</created>
@@ -70,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614496048480</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fhgvghbmnnh">
+      <created>1614496432543</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614496432543</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,15 +95,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fhgvghbmnnh" />
     <option name="LAST_COMMIT_MESSAGE" value="fhgvghbmnnh" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="585" y="2" key="CommitChangelistDialog2" timestamp="1614496040108">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="585" y="2" key="CommitChangelistDialog2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614496040108" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1614496407450">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614496407450" />
   </component>
 </project>
