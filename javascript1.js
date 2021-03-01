@@ -56,7 +56,7 @@ firebase.initializeApp(firebaseConfig);
 //     Ready();
 //     firebase.database().ref('student/'+rollV).remove();
 // }
-var nameV,rollV,secV,genV;
+var nameV, rollV, secV, genV;
 var files = [];
 var imgName, imgUrl;
 var reader;
@@ -88,6 +88,7 @@ document.getElementById("myprofileBtn").onclick = function () {
 document.getElementById("postBtn").onclick = function () {
     document.getElementById("myprofile").hidden = true;
     document.getElementById("postingPage").hidden = false;
+
 }
 
 // document.getElementById("quoteBtn").onclick = function () {
@@ -124,13 +125,13 @@ function hideMainDivs() {
 }
 
 
-document.getElementById("simage").onclick = function(){
+document.getElementById("simage").onclick = function () {
     var input = document.createElement('input');
     input.type = 'file';
     input.onchange = e => {
         files = e.target.files;
         reader = new FileReader();
-        reader.onload = function(){
+        reader.onload = function () {
             document.getElementById("myimg").src = reader.result;
         }
         reader.readAsDataURL(files[0]);
@@ -139,31 +140,31 @@ document.getElementById("simage").onclick = function(){
 
 
 }
-document.getElementById("retrieve").onclick = function(){
+document.getElementById("retrieve").onclick = function () {
     imgName = document.getElementById('namebox1').value;
-    firebase.database().ref('Pictures/'+imgName).on('value', function(snapshot){
+    firebase.database().ref('Pictures/' + imgName).on('value', function (snapshot) {
         document.getElementById('myimg').src = snapshot.val().Link;
     });
 
 
 }
 
-document.getElementById('up').onclick = function(){
+document.getElementById('up').onclick = function () {
     imgName = document.getElementById("namebox1").value;
-    var uploadTask = firebase.storage().ref('Image/'+imgName+".png").put(files[0]);
+    var uploadTask = firebase.storage().ref('Image/' + imgName + ".png").put(files[0]);
 
-    uploadTask.on('state_changed', function (snapshot){
+    uploadTask.on('state_changed', function (snapshot) {
             var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            document.getElementById('upProgress').innerHTML = 'Upload' + progress+'%';
+            document.getElementById('upProgress').innerHTML = 'Upload' + progress + '%';
         },
-        function(error){
+        function (error) {
             alert('error')
         },
-        function(){
-            uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+        function () {
+            uploadTask.snapshot.ref.getDownloadURL().then(function (url) {
                     imgUrl = url;
 
-                    firebase.database().ref('Pictures/'+imgName).set({
+                    firebase.database().ref('Pictures/' + imgName).set({
                         Name: imgName,
                         Link: imgUrl
                     });
