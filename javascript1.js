@@ -239,9 +239,12 @@ function hidePostOps() {
 
 
 function hideMainDivs() {
-    document.getElementById("searchPage").hidden = true;
-    document.getElementById("homePage").hidden = true;
-    document.getElementById("myprofilePage").hidden = true;
+    document.getElementById("lesson6page").hidden = true;
+    document.getElementById("lesson7page").hidden = true;
+    document.getElementById("lesson8page").hidden = true;
+    document.getElementById("lesson9page").hidden = true;
+    document.getElementById("lesson10page").hidden = true;
+
 }
 
 
