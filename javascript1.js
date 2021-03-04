@@ -151,53 +151,65 @@ document.getElementById("enterBtn").onclick = function () {
 // }
 
 
-document.getElementById("homeBtn").onclick = function () {
+document.getElementById("lesson6").onclick = function () {
     hideMainDivs();
-    document.getElementById("homePage").hidden = false;
+    document.getElementById("lesson6page").hidden = false;
 }
 
-document.getElementById("searchBtn").onclick = function () {
+document.getElementById("lesson7").onclick = function () {
     hideMainDivs();
-    document.getElementById("searchPage").hidden = false;
+    document.getElementById("lesson7page").hidden = false;
 }
-
-document.getElementById("myprofileBtn").onclick = function () {
+document.getElementById("lesson8").onclick = function () {
     hideMainDivs();
-    document.getElementById("myprofilePage").hidden = false;
-    document.getElementById("myprofile").hidden = false;
-    document.getElementById("postingPage").hidden = true;
-    for (let i = 0; i < yourPosts.length; i++) {
-        document.getElementById('myprofilePage').removeChild(yourPosts[i])
-    }
-    firebase.database().ref("Users/"+nameV+"/Posts").once('value', function (snapshot) {
-        snapshot.forEach(function (child) {
-            var str = "Users/"+nameV+"/Posts/"+child.key + "/Link";
-            // child.getRef().on('value', function (snapshot) {
-            //     //images.add( snapshot.getChild("Link").val();
-            // });
-            firebase.database().ref(str).on('value', function (snapshot) {
-                var img = document.createElement('img');
-                img.src = snapshot.val();
-                document.getElementById('myprofilePage').appendChild(img);
-                yourPosts.push(img);
-            })
-        });
-    });
-    // for (let i = 0; i < images.length; i++) {
-    //     imageVs.push(document.createElement('img'));
-    //     imgName = "mai"
-    //     firebase.database().ref('Users/'+nameV+"/Posts/"+imgName).on('value', function(snapshot){
-    //         imageVs[i].src = snapshot.val().Link;
-    //     });
-    //     document.getElementById('body').appendChild(imageVs[i]);
-    // }
-
+    document.getElementById("lesson8page").hidden = false;
+}
+document.getElementById("lesson9").onclick = function () {
+    hideMainDivs();
+    document.getElementById("lesson9page").hidden = false;
+}
+document.getElementById("lesson10").onclick = function () {
+    hideMainDivs();
+    document.getElementById("lesson10page").hidden = false;
 }
 
-document.getElementById("postBtn").onclick = function () {
-    document.getElementById("myprofile").hidden = true;
-    document.getElementById("postingPage").hidden = false;
-}
+// document.getElementById("myprofileBtn").onclick = function () {
+//     hideMainDivs();
+//     document.getElementById("myprofilePage").hidden = false;
+//     document.getElementById("myprofile").hidden = false;
+//     document.getElementById("postingPage").hidden = true;
+//     for (let i = 0; i < yourPosts.length; i++) {
+//         document.getElementById('myprofilePage').removeChild(yourPosts[i])
+//     }
+//     firebase.database().ref("Users/"+nameV+"/Posts").once('value', function (snapshot) {
+//         snapshot.forEach(function (child) {
+//             var str = "Users/"+nameV+"/Posts/"+child.key + "/Link";
+//             // child.getRef().on('value', function (snapshot) {
+//             //     //images.add( snapshot.getChild("Link").val();
+//             // });
+//             firebase.database().ref(str).on('value', function (snapshot) {
+//                 var img = document.createElement('img');
+//                 img.src = snapshot.val();
+//                 document.getElementById('myprofilePage').appendChild(img);
+//                 yourPosts.push(img);
+//             })
+//         });
+//     });
+//     // for (let i = 0; i < images.length; i++) {
+//     //     imageVs.push(document.createElement('img'));
+//     //     imgName = "mai"
+//     //     firebase.database().ref('Users/'+nameV+"/Posts/"+imgName).on('value', function(snapshot){
+//     //         imageVs[i].src = snapshot.val().Link;
+//     //     });
+//     //     document.getElementById('body').appendChild(imageVs[i]);
+//     // }
+//
+// }
+
+// document.getElementById("postBtn").onclick = function () {
+//     document.getElementById("myprofile").hidden = true;
+//     document.getElementById("postingPage").hidden = false;
+// }
 
 // document.getElementById("quoteBtn").onclick = function () {
 //     hidePostOps();
